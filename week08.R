@@ -7,3 +7,9 @@ measles <-read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesda
 
 summary(measles)
 head(measles)
+
+## some schools have 0 enrollment?!
+
+measles%>%filter(enroll == 0) %>%print(n = Inf)
+
+summary(as.factor(measles$year))
